@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+	<AliasPackage>
+		<Alias isActive="yes" isFolder="no">
+			<name>afternew</name>
+			<script>commands = {
+   {"s", 1},
+   {"ask you kunyi about 闯荡江湖", 2},
+   {"s", 1},
+   {"s", 1},
+   {"open gate", 1},
+   {"s", 1},
+   {"s", 1},
+   {"s", 1},
+   {"s", 1},
+   {"climb down", 10},
+   {"e", 1},
+   {"w", 1},
+   {"s", 1},
+   {"n", 1},
+   {"w", 20},
+   {"jq", 1},
+   {"e", 1},
+    {"climb up", 10},
+    {"n", 1},
+    {"n", 1},
+    {"n", 1},
+    {"knock gate", 2},
+    {"n", 1},
+    {"n", 1},  
+    {"n", 1},      
+   {"ask you kunyi about 闯荡江湖", 2},    
+      {"jq", 1},
+     {"n", 1},   
+     {"n", 1},
+     {"l shujia", 1},
+     {"get book from shujia", 1},
+     {"read book for 1", 1},
+        {"s", 1},
+         {"s", 1},
+   {"ask you kunyi about 闯荡江湖", 2},
+    {"jq", 1},
+    {"walk -c", 1},
+    {"walk xzl", 10},
+    {"changegift 20 20 20 20 20 20", 1},
+   {"chat* bye you", 1},
+      {"s", 1},
+      {"gu", 1},
+      {"qu 扬州", 1},
+      {"qu 扬州", 10}
+       -- {"xia", 1}
+}
+
+local totalDelay = 0
+
+for i, command in ipairs(commands) do
+    -- 设置定时器来执行命令
+    tempTimer(totalDelay, function()
+        send(command[1])
+    end)
+    
+    -- 每个命令的暂停时间累加到总延迟时间
+    totalDelay = totalDelay + command[2]
+end</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>afternew</regex>
+		</Alias>
+	</AliasPackage>
+</MudletPackage>
